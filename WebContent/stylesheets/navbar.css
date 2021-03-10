@@ -1,0 +1,11 @@
+.bg-custom{
+	background: #a446d7;
+}
+.btn-custom{
+	/*background: #ef3bef;*/
+	background: white;
+}
+.navbar .nav-item .nav-link{
+	font-size: 1rem;
+	color: white;
+}
