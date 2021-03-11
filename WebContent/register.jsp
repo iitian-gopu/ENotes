@@ -88,15 +88,15 @@ input[type="submit"]:focu{
 	<div class="main-data d-flex justify-content-center align-items-center">
 		<div class="form-outter">
 			<h2>Register and enjoy for free.</h2>
-			<form method="get" action="#">
+			<form method="get" action="UserServlet">
 				<group> <label>Name:</label> <br>
-				<input type="text" placeholder="Your name"> </group>
+				<input type="text" placeholder="Your name" name="uName"> </group>
 				<br>
 				<group> <label>E-mail:</label> <br>
-				<input type="text" placeholder="E-mail Address"> </group>
+				<input type="text" placeholder="E-mail Address" name="uEmail"> </group>
 				<br>
 				<group> <label>Password:</label> <br>
-				<input type="password" placeholder="8-16 character long"> </group>
+				<input type="password" placeholder="8-16 character long" name="uPassword"> </group>
 				<br> <br> <input type="submit" class="btn btn-pill"
 					value="Submit">
 			</form>
