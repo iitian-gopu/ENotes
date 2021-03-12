@@ -1,4 +1,5 @@
 
+<%@page import="com.User.UserDetails"%>
 <link rel="stylesheet" href="stylesheets/navbar.css" type="text/css"></link>
 
 <!-- Bootstrap CSS -->
@@ -29,16 +30,80 @@
 				<li class="nav-item"><a class="nav-link" href="#"><i
 						class="fa fa-shopping-basket"> Show notes</i></a></li>
 			</ul>
+
+			<%
+			UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
+			System.out.print(userDetails);
+
+			if (userDetails != null) {
+			%>
+			<div class="d-flex">
+				<a class="btn btn-custom btn-outline-dark mx-1"
+					data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+					class="fa fa-user-circle"> <%=userDetails.getName()%></i> </a> <a
+					href="##" class="btn btn-custom btn-outline-dark mx-1"><i
+					class="fa fa-sign-out-alt"> logout</i> </a>
+			</div>
+			<%
+			} else {
+			%>
 			<div class="d-flex">
 				<a href="register.jsp" class="btn btn-custom btn-outline-dark mx-1"><i
-					class="fa fa-user-plus"> Register</i>
-				</a> <a href="login.jsp" class="btn btn-custom btn-outline-dark mx-1"><i
-					class="fa fa-user-circle"> login</i>
-				</a>
+					class="fa fa-user-plus"> Register</i> </a> <a href="login.jsp"
+					class="btn btn-custom btn-outline-dark mx-1"><i
+					class="fa fa-user-circle"> login</i> </a>
 			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 </nav>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-center fs-2" id="exampleModalLabel">Profile Details</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+
+
+				<table class="table table-striped text-center">
+					<thead>
+						<tr>
+							<th scope="col" colspan="2"><i class="fa fa-user-plus fs-4"> Register</i></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td colspan="2">Larry the Bird</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script language="JavaScript" type="text/JavaScript"
 	src="scripts/javaScriptsDemo.js"></script>

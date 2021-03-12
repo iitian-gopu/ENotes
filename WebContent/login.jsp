@@ -76,6 +76,11 @@ input[type="submit"]:hover {
 	background-color: lime;
 	color: black;
 }
+
+form>h2 {
+	font-weight: 500;
+	text-align: center;
+}
 </style>
 <title>Login | ENotes</title>
 </head>
@@ -85,12 +90,28 @@ input[type="submit"]:hover {
 
 	<div class="main-data d-flex justify-content-center align-items-center">
 		<div class="form-outter">
-			<form method="get" action="#">
+			<form method="post" action="LoginServlet">
+				<h2>
+					<i class="fa fa-user"></i> Login account
+				</h2>
+
+				<%
+				String invalidLogin = (String) session.getAttribute("login-failed");
+				if (invalidLogin != null) {
+				%>
+				<div class="alert alert-danger" role="alert"><%=invalidLogin%></div>
+				<%
+				session.removeAttribute("login-failed");
+				}
+				%>
+
 				<group> <label>E-mail:</label> <br>
-				<input type="text" placeholder="E-mail Address"> </group>
+				<input type="text" placeholder="E-mail Address" name="uEmail">
+				</group>
 				<br>
 				<group> <label>Password:</label> <br>
-				<input type="password" placeholder="8-16 character long"> </group>
+				<input type="password" placeholder="8-16 character long"
+					name="uPassword"> </group>
 				<br> <br> <input type="submit" value="Submit">
 			</form>
 		</div>

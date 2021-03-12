@@ -73,11 +73,13 @@ input[type="submit"] {
 	margin-left: 50%;
 	transform: translate(-50%, -50%);
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
 	background-color: lime;
 	color: black;
 }
-input[type="submit"]:focu{
+
+input[type="submit"]:focu {
 	background-color: #00ff0075;
 }
 </style>
@@ -87,16 +89,40 @@ input[type="submit"]:focu{
 	<%@ include file="common_content/navbar.jsp"%>
 	<div class="main-data d-flex justify-content-center align-items-center">
 		<div class="form-outter">
-			<h2>Register and enjoy for free.</h2>
+			<h2>
+				<i class="fa fa-user-plus"></i> Register and enjoy for free.
+			</h2>
+
+			<%
+			String regMsg = (String) session.getAttribute("reg-sucess");
+			if (regMsg != null) {
+			%>
+			<div class="alert alert-success" role="alert"><%=regMsg%>
+				Login: <a href="login.jsp">Click Here...</a>
+			</div>
+			<%
+			session.removeAttribute("reg-sucess");
+			}
+			String FailedMsg = (String) session.getAttribute("reg-failed");
+			if (FailedMsg != null) {
+			%>
+			<div class="alert alert-danger" role="alert"><%=FailedMsg%></div>
+			<%
+			session.removeAttribute("reg-failed");
+			}
+			%>
+
 			<form method="get" action="UserServlet">
 				<group> <label>Name:</label> <br>
 				<input type="text" placeholder="Your name" name="uName"> </group>
 				<br>
 				<group> <label>E-mail:</label> <br>
-				<input type="text" placeholder="E-mail Address" name="uEmail"> </group>
+				<input type="text" placeholder="E-mail Address" name="uEmail">
+				</group>
 				<br>
 				<group> <label>Password:</label> <br>
-				<input type="password" placeholder="8-16 character long" name="uPassword"> </group>
+				<input type="password" placeholder="8-16 character long"
+					name="uPassword"> </group>
 				<br> <br> <input type="submit" class="btn btn-pill"
 					value="Submit">
 			</form>
