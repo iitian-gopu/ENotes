@@ -31,7 +31,7 @@
 	<%
 	Connection con = DBConnection.getCon();
 	
-	System.out.println(con);
+	//System.out.println( +"We are at 1st page of site. "  con);
 	%>
 
 

@@ -14,6 +14,7 @@ public class UserDAO {
 		super();
 		this.conn = conn;
 	}
+
 	public boolean addUser(UserDetails ud) {
 		boolean f = false;
 		try {
@@ -37,6 +38,7 @@ public class UserDAO {
 
 		return f;
 	}
+
 	public UserDetails loginUser(UserDetails ud) {
 		UserDetails uDetails = null;
 		try {
@@ -48,9 +50,10 @@ public class UserDAO {
 
 			if (rSet.next()) {
 				uDetails = new UserDetails();
+				uDetails.setId(rSet.getInt("id"));
 				uDetails.setName(rSet.getString("name"));
 				uDetails.setEmail(rSet.getString("email"));
-				uDetails.setPassword(rSet.getString("password"));
+				//uDetails.setPassword(rSet.getString("password"));
 			}
 
 		} catch (Exception e) {

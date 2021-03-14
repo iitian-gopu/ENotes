@@ -32,13 +32,13 @@
 	justify-content: center;
 }
 
-group {
+section {
 	display: block;
 	width: 100%;
 	padding: 13px 35px;
 }
 
-group>label {
+section>label {
 	max-width: 40%;
 	font-weight: normal;
 	font-size: x-large;
@@ -46,7 +46,7 @@ group>label {
 	font-style: oblique;
 }
 
-group>input {
+section>input {
 	width: 100%;
 	border: none;
 	outline: none;
@@ -54,7 +54,7 @@ group>input {
 	border-bottom: 1px solid blue;
 }
 
-group>input:focus {
+section>input:focus {
 	border-bottom: 2px solid blue
 }
 
@@ -104,14 +104,34 @@ form>h2 {
 				session.removeAttribute("login-failed");
 				}
 				%>
+				<%
+				String noEntryWithoutLogin = (String) session.getAttribute("Login-error");
+				if (noEntryWithoutLogin != null) {
+				%>
 
-				<group> <label>E-mail:</label> <br>
-				<input type="text" placeholder="E-mail Address" name="uEmail">
-				</group>
+				<div class="alert alert-danger" role="alert"><%=noEntryWithoutLogin%></div>
+				<%
+				session.removeAttribute("Login-error");
+				}
+				%>
+				<%
+				String logoutMsg = (String) session.getAttribute("logout-msg");
+				if (logoutMsg != null) {
+				%>
+				<div class="alert alert-success" role="alert"><%=logoutMsg%></div>
+				<%
+				session.removeAttribute("logout-msg");
+				}
+				%>
+				<section>
+					<label>E-mail:</label> <br> <input type="text"
+						placeholder="E-mail Address" name="uEmail">
+				</section>
 				<br>
-				<group> <label>Password:</label> <br>
-				<input type="password" placeholder="8-16 character long"
-					name="uPassword"> </group>
+				<section>
+					<label>Password:</label> <br> <input type="password"
+						placeholder="8-16 character long" name="uPassword">
+				</section>
 				<br> <br> <input type="submit" value="Submit">
 			</form>
 		</div>
@@ -119,8 +139,6 @@ form>h2 {
 	<%@ include file="common_content/footer.jsp"%>
 	<!-- Option 1: Bundle of Bootstrap Popper -->
 	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-		crossorigin="anonymous"></script>
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

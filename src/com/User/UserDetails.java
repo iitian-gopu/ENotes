@@ -1,7 +1,7 @@
 package com.User;
 
 public class UserDetails {
-
+	private int id;
 	private String name;
 	private String email;
 	private String password;
@@ -10,11 +10,20 @@ public class UserDetails {
 		super();
 
 	}
-	public UserDetails(String name, String email, String password) {
+	
+	public UserDetails(int id, String name, String email, String password) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -36,8 +45,8 @@ public class UserDetails {
 	}
 	@Override
 	public String toString() {
-		String n = "Name: " + this.getName() + "\nEmail: " + this.getEmail()
-				+ "\nPassword: " + this.getPassword() + "\n";
+		String n ="nID: " +this.getId() +"\nName: " + this.getName() + "\nEmail: " + this.getEmail()
+				+ "\nPassword: " + this.getPassword()  +"\n";
 		return n;
 	}
 
