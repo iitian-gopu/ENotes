@@ -45,7 +45,7 @@ if (userDetails1 == null) {
 			<div class="inner-card">
 				<img alt="" src="pictures/make_notes.jpg" class="img-fluid">
 				<h2>Let's create a note.</h2>
-				<a href="addNotes.jsp" class="btn btn-outline-info">Let's make</a>
+				<a href="addNotes.jsp" class="btn btn-outline-info">Let's add Note</a>
 			</div>
 		</div>
 	</div>

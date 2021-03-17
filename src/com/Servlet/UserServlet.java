@@ -14,7 +14,7 @@ import com.Db.DBConnection;
 import com.User.UserDetails;
 
 //It's url
-@WebServlet("/UserServlet")//Registration servlets.
+@WebServlet("/UserServlet") // Registration servlets.
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
 		ud.setName(name);
 		ud.setEmail(email);
 		ud.setPassword(password);
-		
+
 		// Calling DAO method to add a new User.
 		UserDAO udao = new UserDAO(DBConnection.getCon());
 		boolean f = udao.addUser(ud);
@@ -41,7 +41,8 @@ public class UserServlet extends HttpServlet {
 			res.sendRedirect("register.jsp");
 		} else {
 			session = req.getSession();
-			//Will execute when connection with database is failed due to various reason.
+			// Will execute when connection with database is failed due to
+			// various reason.
 			session.setAttribute("reg-failed",
 					"Registration Unsucessful, Something went wrong with server!! Come back in 10 min");
 			res.sendRedirect("register.jsp");

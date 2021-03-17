@@ -20,20 +20,29 @@ public class AddNotesServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+
 		int uid = Integer.parseInt(request.getParameter("uid"));
-		//String uname = request.getParameter("uname");
-		//String uemail = request.getParameter("uemail");
+		// String uname = request.getParameter("uname");
+		// String uemail = request.getParameter("uemail");
 		String noteContent = request.getParameter("noteContent");
 		String noteTopic = request.getParameter("noteTopic");
-		
+
 		NoteDAO NoteDAO = new NoteDAO(DBConnection.getCon());
 		boolean f = NoteDAO.addNotes(noteTopic, noteContent, uid);
-		
-		if(f==true) {
+
+		if (f == true) {
 			System.out.println("Noted added succesfully!");
-		}else {
+			response.sendRedirect("showNotes.jsp");
+		} else {
 			System.out.println("Data not inserted.");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.print("Thread is not sleeping.");
+			}
+			response.sendRedirect("addNotes.jsp");
 		}
 	}
 

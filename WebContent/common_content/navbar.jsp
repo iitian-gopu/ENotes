@@ -25,7 +25,7 @@
 					href="home.jsp"><i class="fa fa-home"> Home</i></a></li>
 				<li class="nav-item"><a class="nav-link" href="addNotes.jsp"><i
 						class="fa fa-plus" aria-hidden="true"> Add notes</i></a></li>
-				<li class="nav-item"><a class="nav-link" href="#"><i
+				<li class="nav-item"><a class="nav-link" href="showNotes.jsp"><i
 						class="fa fa-shopping-basket"> Show notes</i></a></li>
 			</ul>
 
