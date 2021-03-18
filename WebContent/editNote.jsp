@@ -45,7 +45,7 @@ if (userDetails1 == null) {
 					<label for="noteContent" class="form-label">Content<span
 						style="color: red">*</span></label>
 					<textarea name="noteContent" class="form-control" rows="9"
-						required="required" id="noteContent"> <%=nt.getContent()%>></textarea>
+						required="required" id="noteContent"> <%=nt.getContent()%></textarea>
 				</div>
 				<div class="container text-center">
 					<button type="submit" class="btn btn-primary text-center ">Update

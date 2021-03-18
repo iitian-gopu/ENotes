@@ -25,7 +25,7 @@ public class UserDAO {
 			ps.setString(3, ud.getPassword());
 
 			int i = ps.executeUpdate();
-			System.out.println("Data entered!");
+			//System.out.println("Data entered! New User created");
 			if (i == 1) {
 				f = true;
 			} else {

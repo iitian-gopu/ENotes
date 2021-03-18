@@ -112,7 +112,7 @@ input[type="submit"]:focu {
 			}
 			%>
 
-			<form method="get" action="UserServlet">
+			<form method="post" action="UserServlet">
 				<section>
 					<label>Name:</label> <br> <input type="text"
 						placeholder="Your name" name="uName">

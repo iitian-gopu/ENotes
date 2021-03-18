@@ -31,7 +31,7 @@ public class EditNotesServlet extends HttpServlet {
 		if (f == true) {
 			System.out.println("Noted edited succesfully!");
 			HttpSession session = request.getSession();
-			session.setAttribute("EventOnNote", "Choosen note edited succesfully!!!");
+			session.setAttribute("EventOnNote", "Choosen note Edited Succesfully!!!");
 			response.sendRedirect("showNotes.jsp");
 		} else {
 			System.out.println("Data not edited.");

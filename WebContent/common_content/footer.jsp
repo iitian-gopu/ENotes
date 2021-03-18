@@ -11,5 +11,6 @@
 	the copyrights to do anything with it.
 	<p>
 		For any query contact us <strong><i>E-notes@gmail.com</i></strong>
+		<br><small class="muteed">To see what techs are used in this fullstack site, type 'usedTech.jsp' after 'ENotes/'</small>
 	</p>
 </div>

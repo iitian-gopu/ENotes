@@ -18,7 +18,7 @@ import com.User.UserDetails;
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
+	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		// Getting values form jsp
 		String name = req.getParameter("uName");

@@ -37,6 +37,7 @@ public class DeleteNoteServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 
 	}*/
@@ -53,12 +54,12 @@ public class DeleteNoteServlet extends HttpServlet {
 			if (f) {
 				System.out.println("Data deleted succesfully.");
 				session = request.getSession();
-				session.setAttribute("EventOnNote", "Choosen note deleted succesfully!!!");
+				session.setAttribute("EventOnNote", "Choosen note Deleted Succesfully!!!");
 				response.sendRedirect("showNotes.jsp");
 			}else {
 				System.out.println("Data not deleted!!");
 				session = request.getSession();
-				session.setAttribute("EventNote", "Note not deleted, something wronge with server.");
+				session.setAttribute("EventNote", "Ops Note not deleted!, something wronge with server.");
 				response.sendRedirect("showNotes.jsp");
 			}
 
