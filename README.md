@@ -7,3 +7,6 @@ Technologies Used:
   CSS3
   Bootstrap 5
   FontAwesome for icons
+  
+  These are included only
+  An another ToDo app is created with little less functionality using hibernate, instead of simple jdbc.
