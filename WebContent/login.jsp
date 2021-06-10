@@ -88,45 +88,63 @@
 	<body>
 		<%@ include file="common_content/navbar.jsp" %>
 
-
 			<div class="main-data d-flex justify-content-center align-items-center">
 				<div class="form-outter">
-					<form method="post" action="LoginServlet">
-						<h2>
-							<i class="fa fa-user"></i> Login account
-						</h2>
-
-						<% String invalidLogin=(String) session.getAttribute("login-failed"); if (invalidLogin !=null) {
-							%>
-							<div class="alert alert-danger" role="alert">
-								<%=invalidLogin%>
-							</div>
-							<% session.removeAttribute("login-failed"); } %>
-								<% String noEntryWithoutLogin=(String) session.getAttribute("Login-error"); if
-									(noEntryWithoutLogin !=null) { %>
-
-									<div class="alert alert-danger" role="alert">
-										<%=noEntryWithoutLogin%>
-									</div>
-									<% session.removeAttribute("Login-error"); } %>
-										<% String logoutMsg=(String) session.getAttribute("logout-msg"); if (logoutMsg
-											!=null) { %>
-											<div class="alert alert-success" role="alert">
-												<%=logoutMsg%>
-											</div>
-											<% session.removeAttribute("logout-msg"); } %>
-												<section>
-													<label>E-mail:</label> <br> <input type="text"
-														placeholder="E-mail Address" name="uEmail">
-												</section>
-												<br>
-												<section>
-													<label>Password:</label> <br> <input type="password"
-														placeholder="8-16 character long" name="uPassword">
-												</section>
-												<br> <br> <input type="submit" value="Submit">
-					</form>
-				</div>
+			<form method="post" action="LoginServlet">
+				<h2>
+					<i class="fa fa-user"></i> Login account
+				</h2>
+				
+				
+				
+				
+				
+				<% String invalidLogin=(String) session.getAttribute("login-failed");
+				if (invalidLogin !=null) {
+				%>
+				<div class="alert alert-danger" role="alert"><%=invalidLogin%></div>
+				<%
+				session.removeAttribute("login-failed");
+				}
+				%>
+				
+				<%
+				String noEntryWithoutLogin = (String) session.getAttribute("Login-error");
+				if (noEntryWithoutLogin != null) {
+				%>
+				<div class="alert alert-danger" role="alert"><%=noEntryWithoutLogin%></div>
+				<%
+				session.removeAttribute("Login-error");
+				}
+				%>
+				
+				<%
+				String logoutMsg = (String) session.getAttribute("logout-msg");
+				if (logoutMsg != null) {
+				%>
+				<div class="alert alert-success" role="alert"><%=logoutMsg%></div>
+				<%
+				session.removeAttribute("logout-msg");
+				}
+				%>
+				
+				
+				
+				
+				
+				
+				<section>
+					<label>E-mail:</label> <br> <input type="text"
+						placeholder="E-mail Address" name="uEmail" required>
+				</section>
+				<br>
+				<section>
+					<label>Password:</label> <br> <input type="password"
+						placeholder="8-16 character long" name="uPassword" required>
+				</section>
+				<br> <br> <input type="submit" value="Submit">
+			</form>
+		</div>
 			</div>
 			<%@ include file="common_content/footer.jsp" %>
 				<!-- Option 1: Bundle of Bootstrap Popper -->

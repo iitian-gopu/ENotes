@@ -1,6 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.sql.Blob"%>
 <%@page import="com.User.UserNotes" %>
-	<%@page import="java.util.List" %>
-		<%@page import="com.DAO.NoteDAO" %>
+<%@page import="java.util.List" %>
+<%@page import="com.DAO.NoteDAO" %>
 			<% UserDetails userDetails1=(UserDetails) session.getAttribute("userDetails"); if (userDetails1==null) {
 				session.setAttribute("Login-error", "Please login first to see all notes..." );
 				response.sendRedirect("login.jsp"); } %>
@@ -58,6 +62,12 @@
 																<p>
 																	<%=i.getContent()%>
 																</p>
+																<%if(!i.getBase64Image().isBlank()){ 
+																%>
+																<div style="width: 250px; justify-content: center;margin: auto;">
+																<img style="border-radius: 15px; " loading="lazy"  src="data:image/jpg;base64,<%=i.getBase64Image() %>" width="100%"/>
+																</div>
+																<%} %>
 															</div>
 															<hr>
 															<p>

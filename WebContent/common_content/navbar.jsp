@@ -1,6 +1,6 @@
 
 <%@page import="com.User.UserDetails"%>
-<link rel="stylesheet" href="stylesheets/navbar.css" type="text/css"></link>
+<link rel="stylesheet" href="stylesheets/navbar.css"></link>
 
 <!-- Bootstrap CSS -->
 <link

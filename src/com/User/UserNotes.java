@@ -8,6 +8,19 @@ public class UserNotes {
 	private String content;
 	private Date dt;
 	private UserDetails user;
+	private byte[] pic = null;
+	
+	
+	private String base64Image=null;
+    
+    public String getBase64Image() {
+        return base64Image;
+    }
+ 
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+    }
+    
 	public UserNotes() {
 		super();
 	}
@@ -49,6 +62,13 @@ public class UserNotes {
 	}
 	public void setUser(UserDetails user) {
 		this.user = user;
+	}
+	
+	public byte[] getPic() {
+		return pic;
+	}
+	public void setPic(byte[] pic) {
+		this.pic = pic;
 	}
 	@Override
 	public String toString() {

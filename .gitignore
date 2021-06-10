@@ -1,1 +1,12 @@
 /build/
+build/classes/com/DAO/NoteDAO.class
+build/classes/com/DAO/UserDAO.class
+build/classes/com/Db/DBConnection.class
+build/classes/com/Servlet/AddNotesServlet.class
+build/classes/com/Servlet/DeleteNoteServlet.class
+build/classes/com/Servlet/EditNotesServlet.class
+build/classes/com/Servlet/LoginServlet.class
+build/classes/com/Servlet/LogoutServlet.class
+build/classes/com/Servlet/UserServlet.class
+build/classes/com/User/UserDetails.class
+build/classes/com/User/UserNotes.class

@@ -8,7 +8,6 @@ public class UserDetails {
 
 	public UserDetails() {
 		super();
-
 	}
 	
 	public UserDetails(int id, String name, String email, String password) {

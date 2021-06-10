@@ -20,10 +20,12 @@ public class UserServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
+		
 		// Getting values form jsp
 		String name = req.getParameter("uName");
 		String email = req.getParameter("uEmail");
 		String password = req.getParameter("uPassword");
+		
 		// Sending data to POJO
 		UserDetails ud = new UserDetails();
 		ud.setName(name);

@@ -8,8 +8,7 @@ import com.User.UserDetails;
 /*	Dao Contains all the DATABASE Queries */
 public class UserDAO {
 	private Connection conn;
-	// Its is a constructor it's firing is must, thus will get connection for
-	// us.
+	// Constructor it's firing is must, thus will get connection for us.
 	public UserDAO(Connection conn) {
 		super();
 		this.conn = conn;
@@ -25,7 +24,7 @@ public class UserDAO {
 			ps.setString(3, ud.getPassword());
 
 			int i = ps.executeUpdate();
-			//System.out.println("Data entered! New User created");
+			// System.out.println("Data entered! New User created");
 			if (i == 1) {
 				f = true;
 			} else {
@@ -53,7 +52,7 @@ public class UserDAO {
 				uDetails.setId(rSet.getInt("id"));
 				uDetails.setName(rSet.getString("name"));
 				uDetails.setEmail(rSet.getString("email"));
-				//uDetails.setPassword(rSet.getString("password"));
+				// uDetails.setPassword(rSet.getString("password"));
 			}
 
 		} catch (Exception e) {
